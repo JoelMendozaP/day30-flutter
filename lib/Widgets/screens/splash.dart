@@ -1,4 +1,5 @@
 import 'package:day30/Routine/ui/screens/home.dart';
+import 'package:day30/User/ui/screens/sing_in.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -26,7 +27,7 @@ class _SplashState extends State<Splash> {
 
   Future<bool> _mockCheckForSession() async {
     await Future.delayed(Duration(milliseconds: 5000),(){});
-    return true;
+    return false;
   }
 
   void _navigateToHome(){
@@ -40,7 +41,7 @@ class _SplashState extends State<Splash> {
   void _navigateToLogin(){
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(
-        builder: (BuildContext context) => Home()
+        builder: (BuildContext context) => SingIn()
         )
     );
   }
