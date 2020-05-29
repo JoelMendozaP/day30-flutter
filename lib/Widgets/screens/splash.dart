@@ -1,5 +1,7 @@
-import 'package:day30/Routine/ui/screens/home.dart';
+// import 'package:day30/Routine/ui/screens/home.dart';
+// import 'package:day30/User/ui/screens/register.dart';
 import 'package:day30/User/ui/screens/sing_in.dart';
+// import 'package:day30/User/ui/screens/sing_in.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -17,8 +19,6 @@ class _SplashState extends State<Splash> {
     _mockCheckForSession().then(
       (status){
         if(status) {
-          _navigateToHome();
-        }else{
           _navigateToLogin();
         }
       }
@@ -27,15 +27,7 @@ class _SplashState extends State<Splash> {
 
   Future<bool> _mockCheckForSession() async {
     await Future.delayed(Duration(milliseconds: 5000),(){});
-    return false;
-  }
-
-  void _navigateToHome(){
-    Navigator.of(context).pushReplacement(
-      MaterialPageRoute(
-        builder: (BuildContext context) => Home()
-        )
-    );
+    return true;
   }
 
   void _navigateToLogin(){
