@@ -1,4 +1,5 @@
 import 'package:day30/User/bloc/bloc_user.dart';
+import 'package:day30/User/model/user.dart';
 import 'package:day30/Widgets/screens/home.dart';
 import 'package:day30/Widgets/widgets/appbar_cpath.dart';
 import 'package:day30/Widgets/widgets/button_main.dart';
@@ -13,7 +14,6 @@ class SingIn extends StatefulWidget {
 }
 
 class _SingInState extends State<SingIn> {
-
   UserBloc userBloc;
 
   @override
@@ -24,16 +24,15 @@ class _SingInState extends State<SingIn> {
 
   Widget _handleCurrenSession() {
     return StreamBuilder(
-      stream: userBloc.authStatus,
-      builder: (BuildContext context, AsyncSnapshot snapshot){
-        //snapshot -- data - Object user
-        if(!snapshot.hasData || snapshot.hasError){
-          return _signInGood();
-        } else {
-          return Home();
-        }
-      }
-      );
+        stream: userBloc.authStatus,
+        builder: (BuildContext context, AsyncSnapshot snapshot) {
+          //snapshot -- data - Object user
+          if (!snapshot.hasData || snapshot.hasError) {
+            return _signInGood();
+          } else {
+            return Home();
+          }
+        });
   }
 
   Widget _signInGood() {
@@ -56,16 +55,23 @@ class _SingInState extends State<SingIn> {
       child: TitleMain(text: 'Iniciar Sesión'),
     );
   }
-  Widget _button(){
+
+  Widget _button() {
     return Align(
       alignment: Alignment.center,
       child: ButtonMain(
-        text: 'Iniciar Sesión', 
-        onPressed: (){
-          // userBloc.signOut();
-          userBloc.SingInBloc().then((FirebaseUser user) => print('El ususario es ${user.displayName}'));
-        }, 
-        width: 200.0, 
+        text: 'Iniciar Sesión',
+        onPressed: () {
+          userBloc.signOut();
+          userBloc.SingInBloc().then((FirebaseUser user) {
+            userBloc.updateUserData(User(
+                uid: user.uid,
+                name: user.displayName,
+                email: user.email,
+                photoURL: user.photoUrl));
+          });
+        },
+        width: 200.0,
         height: 60.0,
       ),
     );
