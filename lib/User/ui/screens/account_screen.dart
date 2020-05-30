@@ -53,7 +53,7 @@ class _AccountScreenState extends State<AccountScreen> {
       ),
     );
     }else{
-      user = User(name: snapshot.data.displayName, email: snapshot.data.email, photoURL: snapshot.data.photoUrl);
+      user = User(uid: snapshot.data.providerId, name: snapshot.data.displayName, email: snapshot.data.email, photoURL: snapshot.data.photoUrl);
       return Scaffold(
       backgroundColor: Color(0xFF161920),
       body: Stack(
