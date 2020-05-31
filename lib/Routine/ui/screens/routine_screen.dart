@@ -14,27 +14,30 @@ class _RoutineScreenState extends State<RoutineScreen> {
       backgroundColor: Color(0xFF161920),
       body: Container(
         margin: EdgeInsets.only(bottom: 5.0),
-        child: Stack(
+        child: Column(
           children: <Widget>[
-            Cpath(height: 150, image: 'assets/img/logo2.png'),
-            _title(),
-            _showRoutines(),
-            // _line()
+            _appbar(),
+            CardsRountine()
           ],
         ),
       ),
     );
   }
-  Widget _title() {
-    return Align(
-      alignment: Alignment.topCenter + Alignment(0, 0.32),
-      child: TitleMain(text: 'Rutinas'),
+  Widget _appbar() {
+    return Container(
+      height: 165.0,
+      child: Stack(
+        children: <Widget>[
+          Cpath(height: 150, image: 'assets/img/logo2.png'),
+          _title()
+        ],
+      ),
     );
   }
-  Widget _showRoutines(){
+  Widget _title() {
     return Align(
       alignment: Alignment.bottomCenter,
-      child: CardsRountine(),
+      child: TitleMain(text: 'Rutinas'),
     );
   }
 }

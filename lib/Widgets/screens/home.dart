@@ -1,4 +1,5 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:day30/Routine/ui/screens/add_routine_screen.dart';
 import 'package:day30/Routine/ui/screens/my_routine_screen.dart';
 import 'package:day30/Routine/ui/screens/routine_screen.dart';
 import 'package:day30/User/bloc/bloc_user.dart';
@@ -15,10 +16,12 @@ class _HomeState extends State<Home> {
   int _page = 0;
 
   // create all pages
+  // final AddRoutineScreen _myRoutineScreen = AddRoutineScreen();
   final MyRoutineScreen _myRoutineScreen = MyRoutineScreen();
   final RoutineScreen _routineScreen = RoutineScreen();
   final AccountScreen _accountScreen = AccountScreen();
 
+  // Widget _showPage = new AddRoutineScreen();
   Widget _showPage = new MyRoutineScreen();
   Widget _pageChooser(int page) {
     switch (page){
