@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
           initialRoute: 'splash',
           routes: {'splash': (context) => Splash()},
         ),
-        bloc: UserBloc());
+        bloc: UserBloc()
+    );
   }
 }

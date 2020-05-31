@@ -11,10 +11,10 @@ class UserInf extends StatelessWidget {
     final userPhoto = Container(
       width: 100.0,
       height: 100.0,
-      // margin: EdgeInsets.only(
-      //     right: 20.0
-      // ),
       decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(blurRadius: 10.0)
+          ],
           border: Border.all(
               color: Colors.white,
               width: 2.0,
@@ -23,18 +23,17 @@ class UserInf extends StatelessWidget {
           shape: BoxShape.circle,
           image: DecorationImage(
               fit: BoxFit.cover,
-              // image: AssetImage(user.photoURL)
               image: NetworkImage(user.photoURL)
           )
       ),
     );
 
     final userInfo = Column(
-      // crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Container(
             margin: EdgeInsets.only(
-                // bottom: 5.0
+                bottom: 5.0,
+                top: 5.0
             ),
             child: Text(
                 user.name,
@@ -51,14 +50,12 @@ class UserInf extends StatelessWidget {
             style: TextStyle(
                 fontSize: 15.0,
                 color: Colors.white30,
-                // fontFamily: 'Lato'
             )
         ),
       ],
     );
 
     return Container(
-      // color: Colors.red,
       height: 150,
       child: Column(
         children: <Widget>[

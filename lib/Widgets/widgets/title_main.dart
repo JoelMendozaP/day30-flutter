@@ -15,7 +15,7 @@ class _TitleMainState extends State<TitleMain> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: 270,
+        width: MediaQuery.of(context).size.width,
         height: 61.0,
         child: Column(
           children: <Widget>[
@@ -27,14 +27,15 @@ class _TitleMainState extends State<TitleMain> {
   }
   Widget _line() {
     return Container(
-      width: 270,
+      // width: 270,
+      margin: EdgeInsets.symmetric(horizontal: 20.0),
       height: 1,
       color: Colors.white,
     );
   }
   Widget _title() {
     return Container(
-        width: 200.0,
+        width: 230.0,
         height: 60.0,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.only(topLeft: Radius.circular(10.0), topRight: Radius.circular(10.0)),

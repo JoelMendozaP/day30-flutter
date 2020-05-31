@@ -1,3 +1,6 @@
+import 'package:day30/Routine/ui/widgets/cards_routine.dart';
+import 'package:day30/Widgets/widgets/appbar_cpath.dart';
+import 'package:day30/Widgets/widgets/title_main.dart';
 import 'package:flutter/material.dart';
 class RoutineScreen extends StatefulWidget {
   @override
@@ -7,8 +10,31 @@ class RoutineScreen extends StatefulWidget {
 class _RoutineScreenState extends State<RoutineScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text('Rutinas'),
+    return Scaffold(
+      backgroundColor: Color(0xFF161920),
+      body: Container(
+        margin: EdgeInsets.only(bottom: 5.0),
+        child: Stack(
+          children: <Widget>[
+            Cpath(height: 150, image: 'assets/img/logo2.png'),
+            _title(),
+            _showRoutines(),
+            // _line()
+          ],
+        ),
+      ),
+    );
+  }
+  Widget _title() {
+    return Align(
+      alignment: Alignment.topCenter + Alignment(0, 0.32),
+      child: TitleMain(text: 'Rutinas'),
+    );
+  }
+  Widget _showRoutines(){
+    return Align(
+      alignment: Alignment.bottomCenter,
+      child: CardsRountine(),
     );
   }
 }
