@@ -20,7 +20,6 @@ class _CpathState extends State<Cpath> {
       child: Container(
         width: double.infinity,
         height: widget.height,
-        // height: 300,
         color: Color(0xFFEDEEF4),
         child: Center(
             child: Container(

@@ -1,4 +1,5 @@
 import 'package:day30/Routine/model/routine.dart';
+import 'package:day30/Routine/ui/screens/add_routine_screen.dart';
 import 'package:flutter/material.dart';
 
 class CardRoutine extends StatelessWidget {
@@ -7,23 +8,34 @@ class CardRoutine extends StatelessWidget {
   CardRoutine({Key key,@required this.routine, this.topM});
   @override
   Widget build(BuildContext context) {
-    return _contenido(routine.urlImage, routine.name);
+    return _contenido(routine.urlImage, routine.name,context);
   }
-  Widget _contenido(String url,String name){
-    return Container(
-      // margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-      margin:  EdgeInsets.only(top: topM, bottom: 10.0, left: 20.0, right: 20.0),
-      padding: EdgeInsets.all(5.0),
-      decoration: BoxDecoration(
-        color: Color(0xFF3C3F47),
-        borderRadius: BorderRadius.circular(5.0)
-      ),
-      child: ListTile(
-          leading: _img(url),
-          title: _userName(name),
-          subtitle: _detalle(),
-          enabled: true,
-          trailing: _hora(),
+  
+  Widget _contenido(String url,String name,BuildContext context){
+    return RaisedButton(
+      padding: EdgeInsets.all(0),
+      color: Colors.transparent,
+      onPressed: (){
+        Navigator.push(
+          context, 
+          MaterialPageRoute(builder: (BuildContext context) => AddRoutineScreen())
+        );
+      },
+      child: Container(
+        // margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+        margin:  EdgeInsets.only(top: topM, bottom: 10.0, left: 20.0, right: 20.0),
+        padding: EdgeInsets.all(5.0),
+        decoration: BoxDecoration(
+          color: Color(0xFF3C3F47),
+          borderRadius: BorderRadius.circular(5.0)
+        ),
+        child: ListTile(
+            leading: _img(url),
+            title: _userName(name),
+            subtitle: _detalle(),
+            enabled: true,
+            trailing: _hora(),
+        ),
       ),
     );
   }

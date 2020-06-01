@@ -1,7 +1,9 @@
 import 'package:day30/Routine/model/routine.dart';
-import 'package:day30/Routine/ui/widgets/routine_info.dart';
 import 'package:day30/Widgets/widgets/appbar_cpath.dart';
+import 'package:day30/Widgets/widgets/button_main.dart';
+import 'package:day30/Widgets/widgets/icon_back.dart';
 import 'package:day30/Widgets/widgets/title_main.dart';
+import 'package:day30/exercise/ui/screens/training_screen.dart';
 import 'package:day30/exercise/ui/widgets/exercise_list.dart';
 import 'package:flutter/material.dart';
 class AddRoutineScreen extends StatefulWidget {
@@ -23,6 +25,18 @@ class _AddRoutineScreenState extends State<AddRoutineScreen> {
           children: <Widget>[
             _appbar(),
             ExerciseList(),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+              child:  ButtonMain(
+                text: 'Comenzar a Entrenar', 
+                onPressed: (){
+                  Navigator.push(
+                    context, 
+                    MaterialPageRoute(builder: (BuildContext context) => TrainingScreen())
+                  );
+                },
+                height: 50,)
+            ),
           ],
         ),
       ),
@@ -34,7 +48,8 @@ class _AddRoutineScreenState extends State<AddRoutineScreen> {
       child: Stack(
         children: <Widget>[
           Cpath(height: 150, image: 'assets/img/logo2.png'),
-          _title()
+          _title(),
+          _back()
         ],
       ),
     );
@@ -45,5 +60,10 @@ class _AddRoutineScreenState extends State<AddRoutineScreen> {
       child: TitleMain(text: 'Rutinas 1'),
     );
   }
-
+  Widget _back() {
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: IconBack(),
+    );
+  }
 }

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-
 class RoutineAdvances extends StatelessWidget {
-
   String urlImage;
   String name;
   RoutineAdvances(this.urlImage, this.name);
+  
   @override
   Widget build(BuildContext context) {
     return _contenido(urlImage, name);

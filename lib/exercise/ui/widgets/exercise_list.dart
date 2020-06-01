@@ -11,7 +11,7 @@ class _ExerciseListState extends State<ExerciseList> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height - 230.0,
+      height: MediaQuery.of(context).size.height - 240.0,
       child: ListView(
         children: <Widget>[
           RoutineInfo(tduration: '30 Dias', ttotal: '20 min',),
