@@ -1,9 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:day30/Routine/model/routine.dart';
 import 'package:day30/Routine/ui/widgets/card_routine.dart';
+import 'package:day30/Routine/ui/widgets/routine_info.dart';
 import 'package:day30/User/model/user.dart';
+import 'package:day30/Widgets/widgets/global_variables.dart';
 import 'package:day30/exercise/model/exercise.dart';
 import 'package:day30/exercise/ui/widgets/exercise_info.dart';
+import 'package:flutter/cupertino.dart';
 
 class CloudFirestoreAPI {
   final String USERS = 'users';
@@ -30,32 +33,39 @@ class CloudFirestoreAPI {
       cardRoutine.add(CardRoutine(
         routine: Routine
         (
+          id: r.documentID,
           name: r.data['name'], 
           nivel: r.data['nivel'], 
           urlImage: r.data['urlImage'],
+          exercises: r.data['exercises'],
         ),
       ));
     });
     return cardRoutine;
   }
 
-  List<ExerciseInfo> builExercises(List<DocumentSnapshot> exercisesListSnapshot) {
+  List<Widget> builExercises(List<DocumentSnapshot> exercisesListSnapshot,Routine addRoutine) {
+    List<Widget> exerciseInfo = [];
     
-    List<ExerciseInfo> exerciseInfo = List<ExerciseInfo>();
+    // List<ExerciseInfo> exerciseInfo = List<ExerciseInfo>();
+    List lista = addRoutine.exercises;
+    exerciseInfo.add(RoutineInfo(tduration: '20 min', ttotal: '30 dias'));
     int c=0;
-    exercisesListSnapshot.forEach((e) {
-      c=c+1;
-      exerciseInfo.add(ExerciseInfo(
-        exercise: Exercise(
-          name: e.data['name'],
-          photoURL: e.data['photoURL'],
-          ),
-          cont: c,
-          total: exercisesListSnapshot.length,
-        )
-      );
+    lista.forEach((element) {
+      exercisesListSnapshot.forEach((e) {
+        if(element.documentID==e.documentID){
+        c=c+1;
+        exerciseInfo.add(ExerciseInfo(
+          exercise: Exercise(
+            name: e.data['name'],
+            photoURL: e.data['photoURL'],
+            ),
+            cont: c,
+            total: lista.length,
+          ));
+        }
+      });
     });
     return exerciseInfo;
   }
-
 }

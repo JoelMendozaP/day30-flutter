@@ -1,8 +1,11 @@
+import 'package:day30/Routine/model/routine.dart';
 import 'package:day30/User/bloc/bloc_user.dart';
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 
 class ExerciseList extends StatefulWidget {
+  Routine addRoutine;
+  ExerciseList(this.addRoutine);
   
   @override
   _ExerciseListState createState() => _ExerciseListState();
@@ -32,7 +35,7 @@ class _ExerciseListState extends State<ExerciseList> {
           case ConnectionState.active:
           default:
             return ListView(
-              children: exerciseBloc.builExercises(snapshot.data.documents),
+              children: exerciseBloc.builExercises(snapshot.data.documents, widget.addRoutine),
             );
           } 
         },

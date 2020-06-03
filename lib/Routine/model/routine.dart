@@ -8,7 +8,7 @@ class Routine {
   String name;
   String nivel;
   String urlImage;
-  List<Exercise> exercises;
+  List exercises;
 
   Routine({
     Key key,

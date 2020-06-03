@@ -31,7 +31,7 @@ class ExerciseInfo extends StatelessWidget {
   Widget _image(String img, BuildContext context){
     return Container(
       width: 150.0,
-      height: 120.0,
+      height: 100.0,
       child: Center(
         child: CachedNetworkImage(
           imageUrl: img,
@@ -52,7 +52,7 @@ class ExerciseInfo extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(name, style: TextStyle(fontWeight: FontWeight.bold, color: negroPrimario, fontSize: 16.0)),
-          SizedBox(height: 5.0,),
+          SizedBox(height: 15.0,),
           Text('Tiempo: 30seg', style: TextStyle(color: negroPrimario, fontSize: 14.0)),
           Text('Cantidad: $cont/$total', style: TextStyle(color: negroPrimario, fontSize: 14.0)),
         ],

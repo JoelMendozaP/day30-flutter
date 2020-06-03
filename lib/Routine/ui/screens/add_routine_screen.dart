@@ -27,7 +27,8 @@ class _AddRoutineScreenState extends State<AddRoutineScreen> {
         child: Column(
           children: <Widget>[
             _appbar(widget.addRoutine.name),
-            ExerciseList(),
+            // Text(widget.addRoutine.id, style: TextStyle(color: blancoSecundario)),
+            ExerciseList(widget.addRoutine),
             Container(
               margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
               child:  ButtonMain(

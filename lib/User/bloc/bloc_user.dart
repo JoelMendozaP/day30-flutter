@@ -1,9 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:day30/Routine/model/routine.dart';
 import 'package:day30/Routine/ui/widgets/card_routine.dart';
 import 'package:day30/User/model/user.dart';
 import 'package:day30/User/repository/cloud_firestore_api.dart';
 import 'package:day30/User/repository/cloud_firestore_repository.dart';
 import 'package:day30/exercise/ui/widgets/exercise_info.dart';
+import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:day30/User/repository/auth_repository.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -48,8 +50,8 @@ class UserBloc implements Bloc {
   Stream<QuerySnapshot> exerciseListStream = Firestore.instance.collection(CloudFirestoreAPI().EXERCISES).snapshots();
   Stream<QuerySnapshot> get exerciseStream => exerciseListStream;
 
-  List<ExerciseInfo> builExercises(List<DocumentSnapshot> exercisesListSnapshot)
-  => _cloudFirestoreRepository.builExercises(exercisesListSnapshot);
+  List<Widget> builExercises(List<DocumentSnapshot> exercisesListSnapshot,Routine addRoutine)
+  => _cloudFirestoreRepository.builExercises(exercisesListSnapshot, addRoutine);
 
 
   signOut() {
