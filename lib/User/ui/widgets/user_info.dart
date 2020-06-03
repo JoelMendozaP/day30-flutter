@@ -1,9 +1,10 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:day30/User/model/user.dart';
 import 'package:flutter/material.dart';
 class UserInf extends StatelessWidget {
 
-  User user;
-  UserInf(@required this.user);
+  final User user;
+  UserInf(this.user);
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +23,8 @@ class UserInf extends StatelessWidget {
           ),
           shape: BoxShape.circle,
           image: DecorationImage(
-              fit: BoxFit.cover,
-              image: NetworkImage(user.photoURL)
+              image: CachedNetworkImageProvider(user.photoURL)
+              // image: NetworkImage(user.photoURL)
           )
       ),
     );

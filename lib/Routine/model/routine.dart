@@ -1,20 +1,21 @@
 // import 'package:day30/User/model/user.dart';
 
+import 'package:day30/exercise/model/exercise.dart';
 import 'package:flutter/material.dart';
 
 class Routine {
   String id;
   String name;
-  String description;
+  String nivel;
   String urlImage;
-  int likes;
-  // User userOwner;
+  List<Exercise> exercises;
 
   Routine({
     Key key,
+    this.id,
     @required this.name,
-    @required this.description,
+    @required this.nivel,
     @required this.urlImage,
-    this.likes,
+    this.exercises
   });
 }

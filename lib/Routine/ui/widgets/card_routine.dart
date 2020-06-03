@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:day30/Routine/model/routine.dart';
 import 'package:day30/Routine/ui/screens/add_routine_screen.dart';
 import 'package:day30/Widgets/widgets/global_variables.dart';
@@ -5,26 +6,26 @@ import 'package:flutter/material.dart';
 
 class CardRoutine extends StatelessWidget {
   final Routine routine;
-  double topM=10.0;
-  CardRoutine({Key key,@required this.routine, this.topM});
+  CardRoutine({Key key,@required this.routine});
+  
   @override
   Widget build(BuildContext context) {
-    return _contenido(routine.urlImage, routine.name,context);
+    return _contenido(routine.urlImage, routine.name,routine.nivel ,context);
   }
   
-  Widget _contenido(String url,String name,BuildContext context){
+  Widget _contenido(String url,String name,String nivel ,BuildContext context){
     return RaisedButton(
       padding: EdgeInsets.all(0),
-      color: Colors.transparent,
+      elevation: 0,
+      color: negroPrimario,
       onPressed: (){
         Navigator.push(
-          context, 
-          MaterialPageRoute(builder: (BuildContext context) => AddRoutineScreen())
+          context,
+          MaterialPageRoute(builder: (BuildContext context) => AddRoutineScreen(addRoutine: this.routine))
         );
       },
       child: Container(
-        // margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-        margin:  EdgeInsets.only(top: topM, bottom: 10.0, left: 20.0, right: 20.0),
+        margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
         padding: EdgeInsets.all(5.0),
         decoration: BoxDecoration(
           color: negroSecundario,
@@ -33,27 +34,38 @@ class CardRoutine extends StatelessWidget {
         child: ListTile(
             leading: _img(url),
             title: _userName(name),
-            subtitle: _detalle(),
+            subtitle: _detalle(nivel),
             enabled: true,
-            trailing: _hora(),
+            trailing: _adiconar(),
         ),
       ),
     );
   }
-  Widget _img(String url) {
+  Widget _img(String img) {
     return Container(
-      width: 55.0,
-      height: 55.0,
+      padding: EdgeInsets.all(10.0),
+      width: 60.0,
+      height: 60.0,
       decoration: BoxDecoration(
+        color: blancoSecundario,
           border: Border.all(
               color: Colors.white,
               width: 2.0,
               style: BorderStyle.solid
           ),
           shape: BoxShape.circle,
-          image: DecorationImage(
-              // colorFilter: ColorFilter.mode(Colors.orange, BlendMode.colorBurn),
-              fit: BoxFit.cover, image: AssetImage(url))),
+      ),
+      child: CachedNetworkImage(
+          colorBlendMode: BlendMode.modulate,
+          color: colorPrimario,
+          imageUrl: img,
+          placeholder: (context, url) => Container(
+            child: Center(child: CircularProgressIndicator(),),
+          ),
+          errorWidget: (context, url, error) => Icon(Icons.error),
+          fadeInCurve: Curves.easeIn,
+          // fadeInDuration: Duration(milliseconds: 1000),
+      ),
     );
   }
   Widget _userName(String name) {
@@ -69,35 +81,26 @@ class CardRoutine extends StatelessWidget {
       ),
     );
   }
-  Widget _detalle() {
+  Widget _detalle(String nivel) {
     return Container(
       margin: EdgeInsets.only(top: 10),
       child: Text(
-        'Lorem Ipsum is simply dum...',
+        'Nivel: $nivel',
         textAlign: TextAlign.left,
         style: TextStyle(fontSize: 16.0, color: Color(0xFFa3a5a7)),
       ),
     );
   }
-  Widget _hora() {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        // Text('10:59',style: TextStyle(fontSize: 12.0, color: Color(0xFFa3a5a7))),
-        _nroMensajes()
-      ],
-    );
-  }
-  Widget _nroMensajes(){
+  Widget _adiconar(){
     return Container(
-      width: 25,
-      height: 25,
-      //margin: EdgeInsets.only(top: 18),
+      width: 30,
+      height: 30,
+      margin: EdgeInsets.only(top: 10.0),
       decoration: BoxDecoration(
-        color: Colors.blue,
+        color: colorPrimario,
         borderRadius: BorderRadius.all(Radius.circular(100))
       ),
-      child: Center(child: Text('3',style: TextStyle(color: Colors.white))),
+      child: Center(child: Icon(Icons.add, color: Colors.white,)),
     );
   }
 }

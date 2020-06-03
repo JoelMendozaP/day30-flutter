@@ -53,7 +53,8 @@ class _TitleMainState extends State<TitleMain> {
           child: Text(
             widget.text,
             style: TextStyle(
-              fontSize: 30.0,
+              fontSize: 17.0,
+              fontWeight: FontWeight.bold,
               color: colorPrimario,
             ),
           ),
