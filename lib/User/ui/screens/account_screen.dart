@@ -3,6 +3,7 @@ import 'package:day30/User/model/user.dart';
 import 'package:day30/User/ui/widgets/user_info.dart';
 import 'package:day30/Widgets/widgets/appbar_cpath.dart';
 import 'package:day30/Widgets/widgets/button_main.dart';
+import 'package:day30/Widgets/widgets/global_variables.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
@@ -39,7 +40,7 @@ class _AccountScreenState extends State<AccountScreen> {
   Widget showAccount(AsyncSnapshot<FirebaseUser> snapshot){
     if(!snapshot.hasData || snapshot.hasError){
       return Scaffold(
-      backgroundColor: Color(0xFF161920),
+      backgroundColor: negroPrimario,
       body: Stack(
         children: <Widget>[
           Cpath(height: 300, image: 'assets/img/logo1.png'),
@@ -55,7 +56,7 @@ class _AccountScreenState extends State<AccountScreen> {
     }else{
       user = User(uid: snapshot.data.providerId, name: snapshot.data.displayName, email: snapshot.data.email, photoURL: snapshot.data.photoUrl);
       return Scaffold(
-      backgroundColor: Color(0xFF161920),
+      backgroundColor: negroPrimario,
       body: Stack(
         children: <Widget>[
           Cpath(height: 300, image: 'assets/img/logo1.png'),

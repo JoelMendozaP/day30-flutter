@@ -1,5 +1,6 @@
 // import 'package:day30/Widgets/widgets/appbar_cpath.dart';
 import 'package:day30/Widgets/widgets/button_main.dart';
+import 'package:day30/Widgets/widgets/global_variables.dart';
 import 'package:day30/Widgets/widgets/title_main.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ class _RegisterState extends State<Register> {
   }
   Widget _signInGood() {
     return Scaffold(
-      backgroundColor: Color(0xFF161920),
+      backgroundColor: negroPrimario,
       body: Stack(
         children: <Widget>[
           // Cpath(),

@@ -3,6 +3,7 @@ import 'package:day30/Routine/ui/screens/my_routine_screen.dart';
 import 'package:day30/Routine/ui/screens/routine_screen.dart';
 import 'package:day30/User/bloc/bloc_user.dart';
 import 'package:day30/User/ui/screens/account_screen.dart';
+import 'package:day30/Widgets/widgets/global_variables.dart';
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 
@@ -53,14 +54,14 @@ class _HomeState extends State<Home> {
     return Scaffold(
       bottomNavigationBar: CurvedNavigationBar(
         index: _page,
-        backgroundColor: Color(0xFF161920),
-        buttonBackgroundColor: Color(0xFF3C3F47),
-        color: Color(0xFF3C3F47),
+        backgroundColor: negroPrimario,
+        buttonBackgroundColor: negroSecundario,
+        color: negroSecundario,
         height: 60.0,
         items: <Widget>[
-          Icon(Icons.fitness_center, size: 20, color: Color(0xFFFF5A39),),
-          Icon(Icons.event_note, size: 20, color: Color(0xFFFF5A39),),
-          Icon(Icons.account_circle, size: 20, color: Color(0xFFFF5A39),),
+          Icon(Icons.fitness_center, size: 20, color: colorPrimario,),
+          Icon(Icons.event_note, size: 20, color: colorPrimario,),
+          Icon(Icons.account_circle, size: 20, color: colorPrimario,),
         ],
         animationDuration: Duration(milliseconds: 300),
         onTap: (int tappedIndex){

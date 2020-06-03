@@ -1,3 +1,4 @@
+import 'package:day30/Widgets/widgets/global_variables.dart';
 import 'package:flutter/material.dart';
 class ExerciseInfo extends StatefulWidget {
   @override
@@ -19,7 +20,7 @@ class _ExerciseInfoState extends State<ExerciseInfo> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
-          _Inf(),
+          _inf(),
           _image()
         ],
       ),
@@ -37,14 +38,14 @@ class _ExerciseInfoState extends State<ExerciseInfo> {
       ),
     );
   }
-  Widget _Inf() {
+  Widget _inf() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text('Ejercicio 1', style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xFF161920), fontSize: 18.0)),
+        Text('Ejercicio 1', style: TextStyle(fontWeight: FontWeight.bold, color: negroPrimario, fontSize: 18.0)),
         SizedBox(height: 5.0,),
-        Text('Tiempo', style: TextStyle(color: Color(0xFF161920), fontSize: 16.0)),
-        Text('Cantidad', style: TextStyle(color: Color(0xFF161920), fontSize: 16.0)),
+        Text('Tiempo', style: TextStyle(color: negroPrimario, fontSize: 16.0)),
+        Text('Cantidad', style: TextStyle(color: negroPrimario, fontSize: 16.0)),
       ],
     );
   }

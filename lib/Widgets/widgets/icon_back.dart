@@ -1,3 +1,4 @@
+import 'package:day30/Widgets/widgets/global_variables.dart';
 import 'package:flutter/material.dart';
 
 class IconBack extends StatefulWidget {
@@ -13,7 +14,7 @@ class _IconBackState extends State<IconBack> {
         height: 45.0,
         width: 45.0,
         child: IconButton(
-          icon: Icon(Icons.keyboard_arrow_left, color: Color(0xFF161920),size: 45.0,), 
+          icon: Icon(Icons.keyboard_arrow_left, color: negroPrimario,size: 45.0,), 
           onPressed: (){
             Navigator.pop(context);
           }
