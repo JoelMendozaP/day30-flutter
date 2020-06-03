@@ -1,6 +1,7 @@
 import 'package:day30/Routine/model/routine.dart';
 import 'package:day30/Widgets/widgets/appbar_cpath.dart';
 import 'package:day30/Widgets/widgets/button_main.dart';
+import 'package:day30/Widgets/widgets/global_variables.dart';
 import 'package:day30/Widgets/widgets/icon_back.dart';
 import 'package:day30/Widgets/widgets/title_main.dart';
 import 'package:day30/exercise/ui/screens/training_screen.dart';
@@ -18,7 +19,7 @@ class _AddRoutineScreenState extends State<AddRoutineScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF161920),
+      backgroundColor: negroPrimario,
       body: Container(
         margin: EdgeInsets.only(bottom: 5.0),
         child: Column(

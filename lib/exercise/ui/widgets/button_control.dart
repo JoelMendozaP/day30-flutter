@@ -1,3 +1,4 @@
+import 'package:day30/Widgets/widgets/global_variables.dart';
 import 'package:flutter/material.dart';
 class ButtonControl extends StatefulWidget {
   // declaracion
@@ -22,7 +23,7 @@ class _ButtonControlState extends State<ButtonControl> {
         height: widget.height,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30.0),
-          color: Color(0xFFFF5A39),
+          color: colorPrimario,
         ),
         child: Center(
           child: widget.cont

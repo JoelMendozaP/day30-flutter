@@ -1,3 +1,4 @@
+import 'package:day30/Widgets/widgets/global_variables.dart';
 import 'package:day30/exercise/ui/widgets/button_control.dart';
 import 'package:flutter/material.dart';
 class ControlExercise extends StatefulWidget {
@@ -16,7 +17,7 @@ class _ControlExerciseState extends State<ControlExercise> {
         boxShadow: [
           BoxShadow(blurRadius: 5.0)
         ],
-        color: Color(0xFF3C3F47),
+        color: negroSecundario,
         borderRadius: BorderRadius.circular(20.0)
       ),
       child: Column(
@@ -71,8 +72,8 @@ class _ControlExerciseState extends State<ControlExercise> {
       margin: EdgeInsets.only(top: 10.0,right: 30.0,left: 30.0),
       child: LinearProgressIndicator(
         value: 0.5,
-        backgroundColor: Color(0xFF161920),
-        valueColor: AlwaysStoppedAnimation<Color>(Color(0xFFFF5A39)),
+        backgroundColor: negroPrimario,
+        valueColor: AlwaysStoppedAnimation<Color>(colorPrimario),
       ),
     );
   }

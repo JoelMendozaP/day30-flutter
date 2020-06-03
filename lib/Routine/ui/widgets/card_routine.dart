@@ -1,5 +1,6 @@
 import 'package:day30/Routine/model/routine.dart';
 import 'package:day30/Routine/ui/screens/add_routine_screen.dart';
+import 'package:day30/Widgets/widgets/global_variables.dart';
 import 'package:flutter/material.dart';
 
 class CardRoutine extends StatelessWidget {
@@ -26,7 +27,7 @@ class CardRoutine extends StatelessWidget {
         margin:  EdgeInsets.only(top: topM, bottom: 10.0, left: 20.0, right: 20.0),
         padding: EdgeInsets.all(5.0),
         decoration: BoxDecoration(
-          color: Color(0xFF3C3F47),
+          color: negroSecundario,
           borderRadius: BorderRadius.circular(5.0)
         ),
         child: ListTile(

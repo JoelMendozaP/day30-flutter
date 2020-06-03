@@ -3,6 +3,7 @@ import 'package:day30/User/model/user.dart';
 import 'package:day30/Widgets/screens/home.dart';
 import 'package:day30/Widgets/widgets/appbar_cpath.dart';
 import 'package:day30/Widgets/widgets/button_main.dart';
+import 'package:day30/Widgets/widgets/global_variables.dart';
 import 'package:day30/Widgets/widgets/title_main.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +38,7 @@ class _SingInState extends State<SingIn> {
 
   Widget _signInGood() {
     return Scaffold(
-      backgroundColor: Color(0xFF161920),
+      backgroundColor: negroPrimario,
       body: Stack(
         children: <Widget>[
           Cpath(height: 300, image: 'assets/img/logo1.png'),

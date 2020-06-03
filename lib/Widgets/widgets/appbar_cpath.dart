@@ -1,3 +1,4 @@
+import 'package:day30/Widgets/widgets/global_variables.dart';
 import 'package:flutter/material.dart';
 
 class Cpath extends StatefulWidget {
@@ -20,7 +21,7 @@ class _CpathState extends State<Cpath> {
       child: Container(
         width: double.infinity,
         height: widget.height,
-        color: Color(0xFFEDEEF4),
+        color: blancoSecundario,
         child: Center(
             child: Container(
               decoration: BoxDecoration(

@@ -1,3 +1,4 @@
+import 'package:day30/Widgets/widgets/global_variables.dart';
 import 'package:flutter/material.dart';
 class RoutineAdvances extends StatelessWidget {
   String urlImage;
@@ -14,7 +15,7 @@ class RoutineAdvances extends StatelessWidget {
       // margin:  EdgeInsets.only(top: 10.0, bottom: 10.0, left: 20.0, right: 20.0),
       padding: EdgeInsets.all(5.0),
       decoration: BoxDecoration(
-        color: Color(0xFF3C3F47),
+        color: negroSecundario,
         borderRadius: BorderRadius.circular(5.0)
       ),
       child: ListTile(
@@ -60,8 +61,8 @@ class RoutineAdvances extends StatelessWidget {
       margin: EdgeInsets.only(top: 10),
       child: LinearProgressIndicator(
         value: 0.5,
-        backgroundColor: Color(0xFF161920),
-        valueColor: AlwaysStoppedAnimation<Color>(Color(0xFFFF5A39)),
+        backgroundColor: negroPrimario,
+        valueColor: AlwaysStoppedAnimation<Color>(colorPrimario),
       ),
     );
   }

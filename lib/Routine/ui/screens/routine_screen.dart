@@ -1,5 +1,6 @@
 import 'package:day30/Routine/ui/widgets/cards_routine.dart';
 import 'package:day30/Widgets/widgets/appbar_cpath.dart';
+import 'package:day30/Widgets/widgets/global_variables.dart';
 import 'package:day30/Widgets/widgets/title_main.dart';
 import 'package:flutter/material.dart';
 class RoutineScreen extends StatefulWidget {
@@ -11,7 +12,7 @@ class _RoutineScreenState extends State<RoutineScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF161920),
+      backgroundColor: negroPrimario,
       body: Container(
         margin: EdgeInsets.only(bottom: 5.0),
         child: Column(

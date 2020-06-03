@@ -1,3 +1,4 @@
+import 'package:day30/Widgets/widgets/global_variables.dart';
 import 'package:flutter/material.dart';
 class RoutineInfo extends StatelessWidget {
   final String ttotal;
@@ -11,7 +12,7 @@ class RoutineInfo extends StatelessWidget {
       child: Column(
         children: <Widget>[
           _cardInfo(this.ttotal,this.tduration,context),
-          _text('EJERCICIOS DIA 1', Color(0xFFFF5A39))
+          _text('EJERCICIOS DIA 1', colorPrimario)
         ],
       ),
       
@@ -22,9 +23,9 @@ class RoutineInfo extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       padding: EdgeInsets.all(20.0),
       margin: EdgeInsets.all(20.0),
-      // color: Color(0xFF3C3F47),
+      // color: negroSecundario,
       decoration: BoxDecoration(
-        color: Color(0xFF3C3F47),
+        color: negroSecundario,
         borderRadius: BorderRadius.circular(5.0)
       ),
       child: Column(

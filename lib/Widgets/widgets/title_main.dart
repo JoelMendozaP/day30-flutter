@@ -1,3 +1,4 @@
+import 'package:day30/Widgets/widgets/global_variables.dart';
 import 'package:flutter/material.dart';
 
 class TitleMain extends StatefulWidget {
@@ -53,7 +54,7 @@ class _TitleMainState extends State<TitleMain> {
             widget.text,
             style: TextStyle(
               fontSize: 30.0,
-              color: Color(0xFFFF5A39),
+              color: colorPrimario,
             ),
           ),
         ),
