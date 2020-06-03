@@ -16,15 +16,17 @@ class AddRoutineScreen extends StatefulWidget {
   _AddRoutineScreenState createState() => _AddRoutineScreenState();
 }
 class _AddRoutineScreenState extends State<AddRoutineScreen> {
+
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: negroPrimario,
       body: Container(
         margin: EdgeInsets.only(bottom: 5.0),
         child: Column(
           children: <Widget>[
-            _appbar(),
+            _appbar(widget.addRoutine.name),
             ExerciseList(),
             Container(
               margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
@@ -42,23 +44,26 @@ class _AddRoutineScreenState extends State<AddRoutineScreen> {
         ),
       ),
     );
+    
+    
   }
-  Widget _appbar() {
+
+  Widget _appbar(String titulo) {
     return Container(
       height: 165.0,
       child: Stack(
         children: <Widget>[
           Cpath(height: 150, image: 'assets/img/logo2.png'),
-          _title(),
+          _title(titulo),
           _back()
         ],
       ),
     );
   }
-  Widget _title() {
+  Widget _title(String titulo) {
     return Align(
       alignment: Alignment.bottomCenter,
-      child: TitleMain(text: 'Rutinas 1'),
+      child: TitleMain(text: titulo),
     );
   }
   Widget _back() {

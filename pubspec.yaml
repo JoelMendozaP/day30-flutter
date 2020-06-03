@@ -30,6 +30,7 @@ dependencies:
   cloud_firestore: ^0.13.6
   firebase_core: ^0.4.5
   curved_navigation_bar:
+  cached_network_image: ^2.2.0+1
 
 
 dev_dependencies:
