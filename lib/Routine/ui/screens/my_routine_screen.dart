@@ -14,33 +14,33 @@ class _MyRoutineScreenState extends State<MyRoutineScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: negroPrimario,
-      body: Stack(
+      body: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            _appbar(),
+            RoutinesAdvances(),
+            // EmptyList(),
+          ],
+        ),
+      ),
+    );
+  }
+  Widget _appbar() {
+    return Container(
+      height: 165.0,
+      child: Stack(
         children: <Widget>[
           Cpath(height: 150, image: 'assets/img/logo2.png'),
-          _title(),
-          _myRoutines(),
-          // _emptyList()
+          _title()
         ],
       ),
     );
   }
-  
-  Widget _myRoutines() {
-    return Align(
-      alignment: Alignment.bottomCenter,
-      child: RoutinesAdvances(),
-    );
-  }
   Widget _title() {
     return Align(
-      alignment: Alignment.topCenter + Alignment(0, 0.32),
-      child: TitleMain(text: 'Rutinas'),
-    );
-  }
-  Widget _emptyList() {
-    return Align(
-      alignment: Alignment.center,
-      child: EmptyList(),
+      alignment: Alignment.bottomCenter,
+      child: TitleMain(text: 'Tus Rutinas'),
     );
   }
 }

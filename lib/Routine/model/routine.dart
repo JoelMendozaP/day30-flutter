@@ -1,6 +1,5 @@
 // import 'package:day30/User/model/user.dart';
 
-import 'package:day30/exercise/model/exercise.dart';
 import 'package:flutter/material.dart';
 
 class Routine {
@@ -8,6 +7,8 @@ class Routine {
   String name;
   String nivel;
   String urlImage;
+  int tiempo;
+  int duracion;
   List exercises;
 
   Routine({
@@ -16,6 +17,8 @@ class Routine {
     @required this.name,
     @required this.nivel,
     @required this.urlImage,
+    @required this.tiempo,
+    @required this.duracion,
     this.exercises
   });
 }

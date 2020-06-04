@@ -1,7 +1,5 @@
-// import 'package:day30/Routine/ui/screens/home.dart';
-// import 'package:day30/User/ui/screens/register.dart';
 import 'package:day30/User/ui/screens/sing_in.dart';
-// import 'package:day30/User/ui/screens/sing_in.dart';
+import 'package:day30/Widgets/widgets/global_variables.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -41,6 +39,7 @@ class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: blancoSecundario,
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(image: AssetImage('assets/img/logo1.png'))

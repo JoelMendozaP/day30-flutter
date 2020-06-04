@@ -1,9 +1,9 @@
 import 'package:day30/Widgets/widgets/global_variables.dart';
 import 'package:flutter/material.dart';
 class RoutineInfo extends StatelessWidget {
-  final String ttotal;
-  final String tduration;
-  RoutineInfo({Key key,@required this.ttotal,@required this.tduration});
+  final int tiempo;
+  final int duration;
+  RoutineInfo({Key key,@required this.tiempo,@required this.duration});
   
   @override
   Widget build(BuildContext context) {
@@ -11,14 +11,14 @@ class RoutineInfo extends StatelessWidget {
       // width: MediaQuery.of(context).size.width,
       child: Column(
         children: <Widget>[
-          _cardInfo(this.ttotal,this.tduration,context),
+          _cardInfo(this.tiempo,this.duration, context),
           _text('EJERCICIOS DIA 1', colorPrimario)
         ],
       ),
       
     );
   }
-  Widget _cardInfo(String tiempo, String duration, BuildContext context){
+  Widget _cardInfo(int tiempo, int duration, BuildContext context){
     return Container(
       width: MediaQuery.of(context).size.width,
       padding: EdgeInsets.all(20.0),
@@ -30,8 +30,8 @@ class RoutineInfo extends StatelessWidget {
       ),
       child: Column(
         children: <Widget>[
-          _text('Tiempo Total: $tiempo', Colors.white),
-          _text('Duración: $duration', Colors.white),
+          _text('Tiempo Total: $tiempo minutos', Colors.white),
+          _text('Duración: $duration dias', Colors.white),
         ],
       ),
     );

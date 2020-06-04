@@ -21,6 +21,14 @@ class EmptyList extends StatelessWidget {
             width: 200.0,
             height: 60.0,
           ),
+          // Slider(
+          //   value: 50.0,
+          //   max: 100.0,
+          //   min: 0.0,
+          //   inactiveColor: Colors.white,
+          //   activeColor: colorPrimario,
+          //   onChanged: (val){},
+          // )
         ],
       ),
     );

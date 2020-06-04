@@ -12,8 +12,10 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Material App',
-          initialRoute: 'splash',
-          routes: {'splash': (context) => Splash()},
+          home: Splash(),
+          theme: ThemeData(
+            canvasColor: Colors.transparent,
+          ),
         ),
         bloc: UserBloc());
   }

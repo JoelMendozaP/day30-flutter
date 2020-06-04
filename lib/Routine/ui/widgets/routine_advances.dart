@@ -12,8 +12,7 @@ class RoutineAdvances extends StatelessWidget {
   Widget _contenido(String url,String name){
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-      // margin:  EdgeInsets.only(top: 10.0, bottom: 10.0, left: 20.0, right: 20.0),
-      padding: EdgeInsets.all(5.0),
+      // padding: EdgeInsets.all(5.0),
       decoration: BoxDecoration(
         color: negroSecundario,
         borderRadius: BorderRadius.circular(5.0)
@@ -57,14 +56,23 @@ class RoutineAdvances extends StatelessWidget {
     );
   }
   Widget _detalle() {
-    return Container(
-      margin: EdgeInsets.only(top: 10),
-      child: LinearProgressIndicator(
-        value: 0.5,
-        backgroundColor: negroPrimario,
-        valueColor: AlwaysStoppedAnimation<Color>(colorPrimario),
-      ),
+    return Slider(
+      value: 50.0,
+      max: 100.0,
+      min: 0.0,
+      inactiveColor: Colors.white,
+      activeColor: colorPrimario,
+      onChanged: (val){},
     );
+
+    // Container(
+    //   margin: EdgeInsets.only(top: 10),
+    //   child: LinearProgressIndicator(
+    //     value: 0.5,
+    //     backgroundColor: negroPrimario,
+    //     valueColor: AlwaysStoppedAnimation<Color>(colorPrimario),
+    //   ),
+    // );
   }
   Widget _hora() {
     return Column(

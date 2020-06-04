@@ -38,6 +38,8 @@ class CloudFirestoreAPI {
           nivel: r.data['nivel'], 
           urlImage: r.data['urlImage'],
           exercises: r.data['exercises'],
+          tiempo: r.data['tiempo'],
+          duracion: r.data['duracion'],
         ),
       ));
     });
@@ -49,7 +51,7 @@ class CloudFirestoreAPI {
     
     // List<ExerciseInfo> exerciseInfo = List<ExerciseInfo>();
     List lista = addRoutine.exercises;
-    exerciseInfo.add(RoutineInfo(tduration: '20 min', ttotal: '30 dias'));
+    exerciseInfo.add(RoutineInfo(tiempo: addRoutine.tiempo, duration: addRoutine.duracion));
     int c=0;
     lista.forEach((element) {
       exercisesListSnapshot.forEach((e) {
